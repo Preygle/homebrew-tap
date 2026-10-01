@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Install from this tap
+        run: |
+          brew tap preygle/tap "$GITHUB_WORKSPACE"
+          brew install --build-from-source preygle/tap/mangabinder
+          brew test preygle/tap/mangabinder
+          mangabinder --version
