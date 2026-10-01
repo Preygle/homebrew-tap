@@ -1,8 +1,8 @@
 class Mangabinder < Formula
   desc "Download manga chapters, convert them to PDF, bind volumes and export CBZ"
   homepage "https://github.com/Preygle/manga-downloader"
-  url "https://github.com/Preygle/manga-downloader/releases/download/v0.1.0/mangabinder-0.1.0.tar.gz"
-  sha256 "1511f3c8f7b20e4db0ee2a767a10d8ce4a9585e1a1c70b238a710c5424a7e9e1"
+  url "https://github.com/Preygle/manga-downloader/releases/download/v0.1.1/mangabinder-0.1.1.tar.gz"
+  sha256 "c470e3a4fb1c6204cfb9c971b825835cc8695c00307f08030b68fd282216f348"
   license "MIT"
 
   depends_on "python@3.13"
