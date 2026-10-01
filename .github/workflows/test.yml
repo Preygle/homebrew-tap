@@ -15,9 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: Homebrew/actions/setup-homebrew@main
+      # setup-homebrew already taps this repository as preygle/tap
       - name: Install from this tap
         run: |
-          brew tap preygle/tap "$GITHUB_WORKSPACE"
           brew install --build-from-source preygle/tap/mangabinder
           brew test preygle/tap/mangabinder
           mangabinder --version
